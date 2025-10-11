@@ -10,10 +10,13 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import static seedu.studymate.parser.CommandType.START;
+
 public class Parser {
     private static final String DELIMITER_BY = "/by";
     private static final Pattern integerPattern = Pattern.compile("\\d");
     private static final Pattern multipleIntegerPattern = Pattern.compile(("\\d\\.\\.\\.\\d"));
+    private static final int DEFAULT_TIMER_DURATION = 25;
 
     public Command parse(String line) throws StudyMateException {
         if (line.isEmpty()) {
@@ -41,8 +44,32 @@ public class Parser {
             return new Command(CommandType.BYE);
         case "rem":
             return parseRem(arguments);
+        case "start":
+            return parseTimerStart(arguments);
+        case "pause":
+            return new Command(CommandType.PAUSE);
+        case "resume":
+            return new Command(CommandType.RESUME);
+        case "stop":
+            return new Command(CommandType.STOP);
+        case "stat":
+            return new Command(CommandType.STAT);
         default:
             throw new StudyMateException("Unknown command");
+        }
+    }
+
+    private Command parseTimerStart(String[] arguments) throws StudyMateException {
+        try {
+            int index = Integer.parseInt(arguments[0]);
+            if (arguments.length == 1) {
+                return new Command(START, index, DEFAULT_TIMER_DURATION);
+            } else {
+                int minutes = Integer.parseInt(arguments[1]);
+                return new Command(START, index, minutes);
+            }
+        } catch (NumberFormatException e) {
+            throw new StudyMateException("Invalid arguments given!");
         }
     }
 
