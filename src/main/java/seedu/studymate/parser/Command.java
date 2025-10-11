@@ -11,6 +11,9 @@ public class Command {
     DateTimeArg datetime;
     // for operations done on a range of indices
     LinkedHashSet<Integer> indexes;
+    // for timer/if you just need one index
+    int index;
+    int duration;
 
     public Command(CommandType type) {
         this.type = type;
@@ -43,5 +46,11 @@ public class Command {
     public Command(CommandType type, LinkedHashSet<Integer> indexes) {
         this.type = type;
         this.indexes = indexes;
+    }
+
+    public Command(CommandType type, int index, int duration) {
+        this.type = type;
+        this.index = index;
+        this.duration = duration;
     }
 }

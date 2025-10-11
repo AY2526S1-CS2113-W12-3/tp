@@ -4,8 +4,6 @@ import seedu.studymate.exceptions.StudyMateException;
 import seedu.studymate.tasks.TaskList;
 import seedu.studymate.ui.MessageHandler;
 
-import java.util.LinkedHashSet;
-
 public class CommandHandler {
 
     /**
@@ -38,25 +36,17 @@ public class CommandHandler {
     }
 
     private static void handleMark(TaskList taskList, Command cmd) throws StudyMateException {
-        validateTaskNumber(cmd.indexes, taskList.getCount());
+        IndexValidator.validateIndexes(cmd.indexes, taskList.getCount());
         taskList.mark(cmd.indexes);
     }
 
     private static void handleUnmark(TaskList taskList, Command cmd) throws StudyMateException {
-        validateTaskNumber(cmd.indexes, taskList.getCount());
+        IndexValidator.validateIndexes(cmd.indexes, taskList.getCount());
         taskList.unmark(cmd.indexes);
     }
 
     private static void handleDelete(TaskList taskList, Command cmd) throws StudyMateException {
-        validateTaskNumber(cmd.indexes, taskList.getCount());
+        IndexValidator.validateIndexes(cmd.indexes, taskList.getCount());
         taskList.delete(cmd.indexes);
-    }
-
-    private static void validateTaskNumber(LinkedHashSet<Integer> indexes, int max) throws StudyMateException {
-        for (Integer index:indexes) {
-            if (index < 0 || index >= max) {
-                throw new StudyMateException("Invalid index ranges given!");
-            }
-        }
     }
 }

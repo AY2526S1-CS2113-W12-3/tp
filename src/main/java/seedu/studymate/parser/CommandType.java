@@ -10,5 +10,10 @@ public enum CommandType {
     REM_ADD,
     REM_LS,
     REM_RM,
-    BYE
+    BYE,
+    START,
+    PAUSE,
+    RESUME,
+    STOP,
+    STAT
 }
