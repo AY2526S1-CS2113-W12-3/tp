@@ -10,8 +10,6 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static seedu.studymate.parser.CommandType.START;
-
 public class Parser {
     private static final String DELIMITER_BY = "/by";
     private static final Pattern integerPattern = Pattern.compile("\\d");
@@ -63,10 +61,10 @@ public class Parser {
         try {
             int index = Integer.parseInt(arguments[0]);
             if (arguments.length == 1) {
-                return new Command(START, index, DEFAULT_TIMER_DURATION);
+                return new Command(CommandType.START, index, DEFAULT_TIMER_DURATION);
             } else {
                 int minutes = Integer.parseInt(arguments[1]);
-                return new Command(START, index, minutes);
+                return new Command(CommandType.START, index, minutes);
             }
         } catch (NumberFormatException e) {
             throw new StudyMateException("Invalid arguments given!");
