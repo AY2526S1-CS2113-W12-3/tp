@@ -167,7 +167,7 @@ class StorageTest {
 
         assertEquals(1, reminders.getCount());
         assertEquals("Doctor appointment", reminders.getReminder(0).getName());
-        assertTrue(reminders.getReminder(0).getOnReminder());
+        assertFalse(reminders.getReminder(0).getOnReminder());
     }
 
     /**
@@ -200,7 +200,7 @@ class StorageTest {
 
         assertEquals(1, reminders.getCount());
         assertEquals("Weekly meeting", reminders.getReminder(0).getName());
-        assertTrue(reminders.getReminder(0).getOnReminder());
+        assertFalse(reminders.getReminder(0).getOnReminder());
     }
 
     /**

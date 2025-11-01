@@ -218,9 +218,7 @@ public class Storage {
                 reminderList.addReminderOneTime(reminderName, reminderTime);
             }
 
-            if (isReminderDone) {
-                reminderList.getReminder(reminderList.getCount() - 1).setOnReminder(true);
-            }
+            reminderList.getReminder(reminderList.getCount() - 1).setOnReminder(isReminderDone);
             break;
 
         case "H":
