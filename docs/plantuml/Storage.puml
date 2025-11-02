@@ -4,17 +4,12 @@ skinparam packageStyle rectangle
 hide circle
 
 class ":Storage" {
-    - filePath : String
-    - delim : char
-    --
     + Storage()
     + load() : void
     + save() : void
 }
 
 class ":TaskList" {
-    - taskList : ArrayList
-    --
     + addToDo() : void
     + addDeadline() : void
     + addEvent() : void
@@ -24,9 +19,6 @@ class ":TaskList" {
 }
 
 class ":ReminderList" {
-    - reminderList : ArrayList
-    - clock : Clock
-    --
     + addReminderRec() : void
     + addReminderOneTime() : void
     + getReminders() : ArrayList
@@ -34,9 +26,6 @@ class ":ReminderList" {
 }
 
 class ":HabitList" {
-    - habits : ArrayList
-    - clock : Clock
-    --
     + addHabit() : void
     + addHabit() : void
     + getHabits() : ArrayList

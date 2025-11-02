@@ -1,13 +1,11 @@
 @startuml TaskClassDiagram
-' Full detailed class diagram for Task component
+' Class diagram for Task component - focusing on interactions
 skinparam classAttributeIconSize 0
 skinparam roundcorner 5
 hide circle
 
 ' Abstract Base Class
 abstract class ":Task" <<abstract>> {
-  # name: String
-  # isDone: Boolean
   + Task()
   + getName(): String
   + setName(): void
@@ -24,7 +22,6 @@ class ":ToDo" {
 }
 
 class ":Deadline" {
-  - deadline: DateTimeArg
   + Deadline()
   + getDeadline(): DateTimeArg
   + setDeadline(): void
@@ -33,8 +30,6 @@ class ":Deadline" {
 }
 
 class ":Event" {
-  - from: DateTimeArg
-  - to: DateTimeArg
   + Event()
   + getFrom(): DateTimeArg
   + getTo(): DateTimeArg
@@ -46,7 +41,6 @@ class ":Event" {
 
 ' Task List Management
 class ":TaskList" {
-  - taskList: ArrayList<Task>
   + TaskList()
   + addToDo(): void
   + addDeadline(): void
@@ -63,7 +57,6 @@ class ":TaskList" {
   + editDeadline(): void
   + editFrom(): void
   + editTo(): void
-  - getTaskDate(): DateTimeArg
 }
 
 ' External dependencies
