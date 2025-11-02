@@ -472,4 +472,88 @@ public class MessageHandler {
             throw new StudyMateException("Something went wrong with streaking");
         }
     }
+
+    /**
+     * Prints the help message with a summary of all available commands
+     */
+    public static void sendHelpMessage() {
+        System.out.println(LINE);
+        System.out.println("StudyMate - Command Summary");
+        System.out.println();
+        System.out.println("TASK MANAGEMENT:");
+        System.out.println("  todo DESCRIPTION");
+        System.out.println("    - Add a simple task");
+        System.out.println("  deadline DESCRIPTION /by YYYY-MM-DD HH:mm");
+        System.out.println("    - Add a task with a deadline");
+        System.out.println("  event DESCRIPTION /from YYYY-MM-DD HH:mm /to YYYY-MM-DD HH:mm");
+        System.out.println("    - Add an event with start and end times");
+        System.out.println("  list");
+        System.out.println("    - List all tasks");
+        System.out.println("  list -s");
+        System.out.println("    - List tasks sorted by date");
+        System.out.println("  find KEYWORD");
+        System.out.println("    - Search for tasks by keyword");
+        System.out.println("  mark INDEX[,INDEX...]");
+        System.out.println("    - Mark task(s) as done");
+        System.out.println("  unmark INDEX[,INDEX...]");
+        System.out.println("    - Mark task(s) as not done");
+        System.out.println("  edit INDEX -n NEW_DESCRIPTION");
+        System.out.println("    - Edit task description");
+        System.out.println("  edit INDEX -d NEW_DEADLINE");
+        System.out.println("    - Edit deadline date/time");
+        System.out.println("  edit INDEX -f NEW_START");
+        System.out.println("    - Edit event start date/time");
+        System.out.println("  edit INDEX -t NEW_END");
+        System.out.println("    - Edit event end date/time");
+        System.out.println("  delete INDEX[,INDEX...]");
+        System.out.println("    - Delete task(s)");
+        System.out.println();
+        System.out.println("REMINDERS:");
+        System.out.println("  rem MESSAGE @ YYYY-MM-DD HH:mm");
+        System.out.println("    - Add a one-time reminder");
+        System.out.println("  rem MESSAGE @ YYYY-MM-DD HH:mm -r INTERVAL");
+        System.out.println("    - Add a recurring reminder (e.g., 30m, 2h, 1d, 1w)");
+        System.out.println("  rem ls");
+        System.out.println("    - List all reminders");
+        System.out.println("  rem on INDEX[,INDEX...]");
+        System.out.println("    - Turn reminder(s) on");
+        System.out.println("  rem off INDEX[,INDEX...]");
+        System.out.println("    - Turn reminder(s) off");
+        System.out.println("  rem snooze INDEX INTERVAL");
+        System.out.println("    - Snooze a one-time reminder");
+        System.out.println("  rem rm INDEX[,INDEX...]");
+        System.out.println("    - Delete reminder(s)");
+        System.out.println();
+        System.out.println("TIMER:");
+        System.out.println("  start [INDEX|NAME] [@ MINUTES]");
+        System.out.println("    - Start a timer (default: 25 minutes)");
+        System.out.println("  pause");
+        System.out.println("    - Pause the active timer");
+        System.out.println("  resume");
+        System.out.println("    - Resume a paused timer");
+        System.out.println("  reset");
+        System.out.println("    - Reset the active timer");
+        System.out.println("  stat");
+        System.out.println("    - Check timer status");
+        System.out.println();
+        System.out.println("HABIT TRACKING:");
+        System.out.println("  habit DESCRIPTION -t INTERVAL");
+        System.out.println("    - Add a habit (e.g., habit Exercise -t 1d)");
+        System.out.println("  habit ls");
+        System.out.println("    - List all habits");
+        System.out.println("  habit streak INDEX");
+        System.out.println("    - Increment habit streak");
+        System.out.println("  habit rm INDEX");
+        System.out.println("    - Delete a habit");
+        System.out.println();
+        System.out.println("OTHER:");
+        System.out.println("  help");
+        System.out.println("    - Show this help message");
+        System.out.println("  bye");
+        System.out.println("    - Exit StudyMate");
+        System.out.println();
+        System.out.println("Note: When specifying multiple indices, do not include spaces.");
+        System.out.println("Example: mark 1,2,3 not mark 1, 2, 3");
+        System.out.println(LINE);
+    }
 }

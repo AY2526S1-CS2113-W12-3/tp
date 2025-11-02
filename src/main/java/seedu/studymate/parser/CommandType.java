@@ -34,5 +34,6 @@ public enum CommandType {
     HABIT_STREAK,
     HABIT_LIST,
     HABIT_DELETE,
+    HELP,
     BYE
 }

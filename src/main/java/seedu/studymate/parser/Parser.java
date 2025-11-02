@@ -91,6 +91,8 @@ public class Parser {
             return new Command(CommandType.STAT);
         case "habit":
             return parseHabit(arguments);
+        case "help":
+            return new Command(CommandType.HELP);
         default:
             throw new StudyMateException("Unknown command");
         }
