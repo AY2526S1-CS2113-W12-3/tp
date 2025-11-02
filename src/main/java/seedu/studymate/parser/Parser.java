@@ -710,8 +710,8 @@ public class Parser {
         int tIndex = Arrays.asList(lowerArgs).indexOf("-t");
         if (habit.isBlank() || tIndex == 0) {
             throw new StudyMateException("Input a habit!");
-        } else if (tIndex == arguments.length - 1 || tIndex == -1) {
-            throw new StudyMateException("Input a recurring duration after the -t flag!");
+        } else if (tIndex == arguments.length - 1 || tIndex == -1 || tIndex + 2 < arguments.length) {
+            throw new StudyMateException("Input a proper recurring duration after the -t flag!");
         }
         Duration interval = parseInterval(arguments[tIndex + 1]);
         String habitName = String.join(" ", java.util.Arrays.copyOfRange(arguments, 0, tIndex));
