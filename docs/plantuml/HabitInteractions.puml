@@ -4,13 +4,6 @@ hide circle
 skinparam classAttributeIconSize 0
 
 class ":Habit" {
-  - {static} gracePeriod: int = 4
-  - name: String
-  - deadline: DateTimeArg
-  - interval: Duration
-  - streak: int
-  - clock: Clock
-
   + Habit()
   + Habit()
   + incStreak(): StreakResult
@@ -26,8 +19,6 @@ enum ":StreakResult" <<enumeration>> {
 }
 
 class ":DateTimeArg" {
-  - date: LocalDate
-  - time: LocalTime
 
   + DateTimeArg()
   + DateTimeArg()

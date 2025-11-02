@@ -1,9 +1,9 @@
-
 @startuml ReminderListInteractions
 ' Detailed ReminderList component interactions
 skinparam roundcorner 5
 hide circle
 skinparam classAttributeIconSize 0
+
 class ":ReminderList" {
   + addReminderOneTime()
   + addReminderRec()

@@ -4,10 +4,6 @@ skinparam classAttributeIconSize 0
 hide circle
 
 class ":HabitList" {
-  - {static} logger: Logger
-  - habits: ArrayList<Habit>
-  - clock: Clock
-
   + HabitList()
   + HabitList()
   + getHabit(): Habit
@@ -21,12 +17,6 @@ class ":HabitList" {
 }
 
 class ":Habit" {
-  - {static} gracePeriod: int = 4
-  - name: String
-  - deadline: DateTimeArg
-  - interval: Duration
-  - streak: int
-  - clock: Clock
 
   + Habit()
   + Habit()

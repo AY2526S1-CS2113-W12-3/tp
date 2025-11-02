@@ -4,44 +4,7 @@ skinparam classAttributeIconSize 0
 hide circle
 
 class ":Parser" {
-  - {static} DELIMITER_BY: String
-  - {static} DELIMITER_FROM: String
-  - {static} DELIMITER_TO: String
-  - {static} SORTED_FLAG: String
-  - {static} DESCRIPTION_FLAG: String
-  - {static} DEADLINE_FLAG: String
-  - {static} FROM_FLAG: String
-  - {static} TO_FLAG: String
-  - {static} integerPattern: Pattern
-  - {static} multipleIntegerPattern: Pattern
-  - {static} TIMER_PATTERN: Pattern
-  - {static} logger: Logger
-
   + parse(): Command
-  - parseToDo(): Command
-  - parseDeadline(): Command
-  - parseEvent(): Command
-  - parseFind(): Command
-  - parseList(): Command
-  - parseMark(): Command
-  - parseUnmark(): Command
-  - parseEdit(): Command
-  - parseDelete(): Command
-  - parseIndexes(): LinkedHashSet<Integer>
-  - parseRem(): Command
-  - parseRemOn(): Command
-  - parseRemOff(): Command
-  - parseRemRm(): Command
-  - parseRemSnooze(): Command
-  - parseRemLs(): Command
-  - parseRemAdd(): Command
-  - parseDateTimeString(): DateTimeArg
-  - parseInterval(): Duration
-  - parseTimerStart(): Command
-  - parseHabit(): Command
-  - parseHabitAdd(): Command
-  - parseHabitStreak(): Command
-  - parseHabitRm(): Command
 }
 
 class ":Command" {
@@ -92,15 +55,18 @@ enum ":CommandType" <<enumeration>> {
   HABIT_STREAK
   HABIT_LIST
   HABIT_DELETE
+  HELP
 }
 
 class ":DateTimeArg" {
-  + date: LocalDate
-  + time: LocalTime
+  + DateTimeArg()
+  + getDate(): LocalDate
+  + getTime(): LocalTime
+  + getDateTime(): LocalDateTime
 }
 
 class ":StudyMateException" {
-  + message: String
+  + StudyMateException()
 }
 
 ":Parser" ..> ":Command" : creates

@@ -9,38 +9,9 @@ skinparam noteArrowLength 2
 hide circle
 
 class ":CommandHandler" {
-  - {static} activeTimer: Timer
-  - {static} scheduler: ScheduledExecutorService
-  - {static} logger: Logger
-
   + {static} executeCommand(): void
   + {static} cleanup(): void
-  - {static} handleToDo(): void
-  - {static} handleDeadline(): void
-  - {static} handleEvent(): void
-  - {static} handleList(): void
-  - {static} handleFind(): void
-  - {static} handleMark(): void
-  - {static} handleUnmark(): void
-  - {static} handleEdit(): void
-  - {static} handleDelete(): void
-  - {static} handleRemAddRec(): void
-  - {static} handleRemAddOneTime(): void
-  - {static} handleRemList(): void
-  - {static} handleRemRm(): void
-  - {static} handleRemOn(): void
-  - {static} handleRemOff(): void
-  - {static} handleRemSnooze(): void
-  - {static} handleTimerStart(): void
-  - {static} handleTimerPause(): void
-  - {static} handleTimerResume(): void
-  - {static} handleTimerReset(): void
-  - {static} handleTimerStat(): void
-  - {static} startTimerMonitoring(): void
-  - {static} handleHabitAdd(): void
-  - {static} handleHabitDelete(): void
-  - {static} handleHabitList(): void
-  - {static} handleHabitStreak(): void
+  + {static} setClock(): void
 }
 
 class ":Command" {
@@ -60,17 +31,10 @@ class ":Command" {
 }
 
 class ":XYZList" {
-  - list: ArrayList
 }
 note bottom of ":XYZList" : XYZList represents:\nTaskList, ReminderList, HabitList
 
 class ":Timer" {
-  - {static} logger: Logger
-  - state: TimerState
-  - remainingSec: long
-  - startedAt: Instant
-  - label: String
-
   + Timer()
   + Timer()
   + start(): void
@@ -81,7 +45,6 @@ class ":Timer" {
   + getState(): TimerState
   + getLabel(): String
   + toString(): String
-  - {static} formatDuration(): int[]
 }
 
 class ":MessageHandler" {
