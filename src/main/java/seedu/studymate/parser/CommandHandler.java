@@ -84,6 +84,9 @@ public class CommandHandler {
         case HABIT_LIST -> handleHabitList(habitList);
         case HABIT_DELETE -> handleHabitDelete(habitList, cmd);
 
+        // Other commands
+        case HELP -> MessageHandler.sendHelpMessage();
+
         // Exception Handling
         default -> throw new StudyMateException("Invalid Command");
         }
