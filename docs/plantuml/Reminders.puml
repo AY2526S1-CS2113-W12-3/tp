@@ -10,7 +10,8 @@ interface ":Schedule" {
   + isRecurring(): boolean
   + isDue(): boolean
   + isFired(): void
-  + setRemindAt(): void
+  + setFired(): void
+  + getFired(): boolean
   + setOnReminder(): void
   + getOnReminder(): boolean
   + snooze(): void
@@ -23,6 +24,8 @@ class ":OneTimeSchedule" {
   + getOnReminder(): boolean
   + isDue(): boolean
   + isFired(): void
+  + setFired(): void
+  + getFired(): boolean
   + snooze(): void
 }
 

@@ -21,8 +21,8 @@ activate Parser
 Parser -> Parser : extract task name\nand deadline datetime
 activate Parser
 
-Parser -> DateTimeArg ** : create(2025-11-05 23:59)
-Parser -> Command ** : create(DEADLINE_ADD, name, dateTime)
+Parser -> DateTimeArg ** : new DateTimeArg(2025-11-05 23:59)
+Parser -> Command ** : new Command(DEADLINE, name, dateTime)
 activate Command
 Command --> Parser
 deactivate Command

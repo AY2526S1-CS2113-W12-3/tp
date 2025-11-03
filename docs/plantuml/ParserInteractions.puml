@@ -17,8 +17,7 @@ class ":Command" {
   + datetime1: DateTimeArg
   + indexes: LinkedHashSet<Integer>
   + index: int
-  + isRecurring: boolean
-  + duration: Integer
+  + duration: long
   + interval: Duration
   + snoozeDuration: Duration
 
