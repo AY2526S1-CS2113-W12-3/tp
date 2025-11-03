@@ -215,7 +215,7 @@ Here are the tasks with the matching substring found!:
 ```
 
 **Notes:**
-* Search is case-insensitive.
+* Search is case-sensitive.
 * If no match, you will receive an empty result.
 
 ---
@@ -805,19 +805,19 @@ For example:
 
 *When on time:*
 ```
-Great! You've incremented your streak.
+Great! You've incremented your streak for
 Habit: [H] Exercise (deadline: 2025-10-28 14:30, streak: 6)
 ```
 
 *When too early:*
 ```
-Too early! You can only increment the streak after the deadline.
+Too early! You can only increment the streak after the deadline for
 Habit: [H] Exercise (deadline: 2025-10-27 14:30, streak: 5)
 ```
 
 *When too late:*
 ```
-Missed the deadline! Your streak has been reset to 1.
+Missed the deadline! Your streak has been reset to 1 for
 Habit: [H] Exercise (deadline: 2025-10-28 14:30, streak: 1)
 ```
 
@@ -905,9 +905,9 @@ This gives you reasonable flexibility while still encouraging consistency.
 
 **A**: When a one-time reminder triggers, it is automatically turned off and marked as "fired". If you turn off a one-time reminder before it fires and later turn it back on after its scheduled time has passed, StudyMate treats this as if you no longer need that reminder and will not trigger it. This prevents outdated reminders from firing unexpectedly. If you still need the reminder, create a new one with an updated time.
 
-**Q**: Why does `start -5` give an error instead of creating a timer named "-5"?
+**Q**: Why does `start -5` create a timer named "-5"?
 
-**A**: If the first argument to `start` contains only digits (including negative numbers like `-5`), it will always be treated as a task INDEX, not a name. Since `-5` is not a valid task index, it results in an error. The first argument is never interpreted as duration - use `@MINUTES` to specify duration. To use a numeric-looking name, include non-digit characters (e.g., `start Task-5 @ 30` instead of `start -5 @ 30`).
+**A**: The parser only treats arguments containing exclusively digits (0-9) as task indices. Since `-5` contains a minus sign, it doesn't match the digit-only pattern and gets treated as a custom label instead. The first argument is never interpreted as duration - use `@MINUTES` to specify duration.
 
 **Q**: What happens if I include duplicate indices in commands like `mark 3,2,1,1`?
 

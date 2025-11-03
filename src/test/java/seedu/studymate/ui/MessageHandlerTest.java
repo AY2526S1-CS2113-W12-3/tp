@@ -531,14 +531,14 @@ class MessageHandlerTest {
     @Test
     void sendIncStreakMessage_onTime_success() throws StudyMateException {
         MessageHandler.sendIncStreakMessage(new MockHabit("OnTime"), StreakResult.ON_TIME);
-        String expected = line + "Great! You've incremented your streak for: [H] OnTime\n" + line;
+        String expected = line + "Great! You've incremented your streak for\nHabit: [H] OnTime\n" + line;
         assertEquals(normaliseOutput(expected), normaliseOutput(outContent.toString()));
     }
 
     @Test
     void sendIncStreakMessage_tooEarly_success() throws StudyMateException {
         MessageHandler.sendIncStreakMessage(new MockHabit("Early Habit"), StreakResult.TOO_EARLY);
-        String expected = line + "Too early! You can only increment the streak after the deadline.\nHabit: [H] " +
+        String expected = line + "Too early! You can only increment the streak after the deadline for\nHabit: [H] " +
                 "Early Habit\n" + line;
         assertEquals(normaliseOutput(expected), normaliseOutput(outContent.toString()));
     }
@@ -546,7 +546,7 @@ class MessageHandlerTest {
     @Test
     void sendIncStreakMessage_tooLate_success() throws StudyMateException {
         MessageHandler.sendIncStreakMessage(new MockHabit("Late Habit"), StreakResult.TOO_LATE);
-        String expected = line + "Missed the deadline! Your streak has been reset to 1.\n" +
+        String expected = line + "Missed the deadline! Your streak has been reset to 1 for\n" +
                 "Habit: [H] Late Habit\n" + line;
         assertEquals(normaliseOutput(expected), normaliseOutput(outContent.toString()));
     }

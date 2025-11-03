@@ -455,16 +455,17 @@ public class MessageHandler {
         System.out.println(LINE);
         switch (result) {
         case ON_TIME:
-            System.out.println("Great! You've incremented your streak for: " + habit.toString());
+            System.out.println("Great! You've incremented your streak for");
+            System.out.println("Habit: " + habit);
             System.out.println(LINE);
             break;
         case TOO_EARLY:
-            System.out.println("Too early! You can only increment the streak after the deadline.");
+            System.out.println("Too early! You can only increment the streak after the deadline for");
             System.out.println("Habit: " + habit);
             System.out.println(LINE);
             break;
         case TOO_LATE:
-            System.out.println("Missed the deadline! Your streak has been reset to 1.");
+            System.out.println("Missed the deadline! Your streak has been reset to 1 for");
             System.out.println("Habit: " + habit);
             System.out.println(LINE);
             break;

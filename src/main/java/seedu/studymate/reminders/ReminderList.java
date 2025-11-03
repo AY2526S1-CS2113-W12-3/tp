@@ -110,15 +110,6 @@ public class ReminderList {
     }
 
     /**
-     * Indicates this is a recurring schedule.
-     *
-     * @return Always true
-     */
-    public boolean isRecurring() {
-        return true;
-    }
-
-    /**
      * Deletes reminders at specified indexes.
      * Processes in reverse order to prevent index shifting issues.
      * Sends notifications via MessageHandler.

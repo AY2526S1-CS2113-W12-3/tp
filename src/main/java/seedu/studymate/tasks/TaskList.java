@@ -172,7 +172,7 @@ public class TaskList {
      */
     public ArrayList<Task> getTasks() {
         logger.log(Level.INFO, "Task List Retrieved");
-        return taskList;
+        return new ArrayList<>(taskList);
     }
 
     /**
@@ -254,14 +254,18 @@ public class TaskList {
      *
      * @param index The index of the task to edit
      * @param newFrom The new from date for the event
-     * @throws seedu.studymate.exceptions.StudyMateException If the task is not an Event
+     * @throws StudyMateException If the task is not an Event
      */
     public void editFrom(int index, DateTimeArg newFrom) throws StudyMateException {
         Task task = taskList.get(index);
         if (!(task instanceof Event)) {
-            throw new seedu.studymate.exceptions.StudyMateException("Task is not an event!");
+            throw new StudyMateException("Task is not an event!");
         }
-        ((Event) task).setFrom(newFrom);
+        Event event = (Event) task;
+        if (event.getTo().getDateTime().isBefore(newFrom.getDateTime())) {
+            throw new StudyMateException("Event's from datetime cannot be after to's datetime!");
+        }
+        event.setFrom(newFrom);
         logger.log(Level.INFO, "Edited from date of task at index " + index + " to: " + newFrom);
         MessageHandler.sendEditFromMessage(task, newFrom);
     }
@@ -278,7 +282,11 @@ public class TaskList {
         if (!(task instanceof Event)) {
             throw new seedu.studymate.exceptions.StudyMateException("Task is not an event!");
         }
-        ((Event) task).setTo(newTo);
+        Event event = (Event) task;
+        if (event.getFrom().getDateTime().isAfter(newTo.getDateTime())) {
+            throw new StudyMateException("Event's from datetime cannot be after to's datetime!");
+        }
+        event.setTo(newTo);
         logger.log(Level.INFO, "Edited to date of task at index " + index + " to: " + newTo);
         MessageHandler.sendEditToMessage(task, newTo);
     }

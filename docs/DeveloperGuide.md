@@ -1888,9 +1888,9 @@ This section provides instructions for manual testing of StudyMate. These test c
 - Command: `find assignment`
 - Expected: All tasks whose name contains "assignment" are displayed. Search matches task descriptions only, not type markers or completion status.
 
-**Test case: Case-insensitive search**
+**Test case: Case-sensitive search**
 - Command: `find CHAPTER`
-- Expected: Tasks containing "chapter" (case-insensitive) are displayed.
+- Expected: Tasks containing "CHAPTER" (case-sensitive) are displayed.
 
 ### Editing Tasks
 

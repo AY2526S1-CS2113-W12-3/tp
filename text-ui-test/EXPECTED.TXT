@@ -89,11 +89,11 @@ OK, I've edited the deadline of the deadline Submit report to:
 ____________________________________________________________
 ____________________________________________________________
 OK, I've edited the from date of the event Team meeting to:
-2025-11-28 09:00
+2025-10-19 09:00
 ____________________________________________________________
 ____________________________________________________________
 OK, I've edited the to date of the event Team meeting to:
-2025-11-28 17:00
+2025-10-28 17:00
 ____________________________________________________________
 ____________________________________________________________
 Here are the tasks with the matching substring found!:
@@ -105,8 +105,8 @@ Here are the tasks with the matching substring found!:
 ____________________________________________________________
 ____________________________________________________________
 Here are the deadlines and events in your task list, sorted by their deadlines and/or start times:
-1. [D][X] Prepare presentation (by: 2025-10-27 17:00)
-2. [E][ ] Team meeting (from: 2025-11-28 09:00, to: 2025-11-28 17:00)
+1. [E][ ] Team meeting (from: 2025-10-19 09:00, to: 2025-10-28 17:00)
+2. [D][X] Prepare presentation (by: 2025-10-27 17:00)
 3. [D][X] Submit report (by: 2025-11-30 23:59)
 ____________________________________________________________
 ____________________________________________________________
@@ -119,7 +119,7 @@ ____________________________________________________________
 Here are the tasks in your task list:
 1. [T][X] Updated first task
 2. [D][X] Prepare presentation (by: 2025-10-27 17:00)
-3. [E][ ] Team meeting (from: 2025-11-28 09:00, to: 2025-11-28 17:00)
+3. [E][ ] Team meeting (from: 2025-10-19 09:00, to: 2025-10-28 17:00)
 ____________________________________________________________
 ____________________________________________________________
 Got it. I've added this One-Time reminder:
@@ -330,7 +330,7 @@ Here are the habits in your habit list:
 3. [H] Reading (deadline: 2025-10-26 00:00, streak: 1)
 ____________________________________________________________
 ____________________________________________________________
-Too early! You can only increment the streak after the deadline.
+Too early! You can only increment the streak after the deadline for
 Habit: [H] Morning routine (deadline: 2025-10-25 14:00, streak: 1)
 ____________________________________________________________
 ____________________________________________________________

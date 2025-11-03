@@ -408,7 +408,7 @@ public class CommandHandler {
     private static synchronized void checkTimerState() {
         if (activeTimer == null) {
             // does scheduler cleanup when timer isn't running
-            if (!scheduler.isShutdown()) {
+            if (scheduler != null && !scheduler.isShutdown()) {
                 scheduler.shutdown();
                 logger.log(Level.INFO, "Scheduler shutdown (Active timer is null)");
                 scheduler = null;
