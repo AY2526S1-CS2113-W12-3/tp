@@ -1015,7 +1015,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 #### Reminder Operations Flow
 
 **Adding a One-Time Reminder:**
-1. User provides reminder name and datetime (e.g., "remind Study for exam -t 25/12/2024 1400")
+1. User provides reminder name and datetime (e.g., "rem Study for exam @ 2024-12-25 14:00")
 2. Parser creates `REMINDER_ADD` command with name and datetime
 3. CommandHandler calls `ReminderList.addReminderOneTime(name, dateTime)`
 4. ReminderList creates new Reminder with:
@@ -1027,7 +1027,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 6. MessageHandler displays confirmation with reminder details
 
 **Adding a Recurring Reminder:**
-1. User provides reminder name, datetime, and interval (e.g., "remind Take medicine -t 01/01/2025 0900 -rec 12h")
+1. User provides reminder name, datetime, and interval (e.g., "rem Take medicine @ 2025-01-01 09:00 -r 12h")
 2. Parser creates `REMINDER_ADD` command with name, datetime, and interval
 3. CommandHandler calls `ReminderList.addReminderRec(name, dateTime, interval)`
 4. ReminderList creates new Reminder with:
@@ -1038,7 +1038,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 6. MessageHandler displays confirmation with reminder details including recurrence interval
 
 **Listing Reminders:**
-1. User types "remind ls"
+1. User types "rem ls"
 2. Parser creates `REMINDER_LIST` command
 3. CommandHandler calls `MessageHandler.sendReminderList(reminderList)`
 4. MessageHandler iterates through all reminders and displays:
@@ -1049,7 +1049,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
     - Recurrence interval (if recurring)
 
 **Turning On/Off Reminders:**
-1. User provides reminder indexes (e.g., "remind on 1,3" or "remind off 2")
+1. User provides reminder indexes (e.g., "rem on 1,3" or "rem off 2")
 2. Parser creates `REMINDER_ON` or `REMINDER_OFF` command with index set
 3. CommandHandler validates indexes with IndexValidator
 4. CommandHandler calls `ReminderList.turnOnReminders(indexes)` or `turnOffReminders(indexes)`
@@ -1061,7 +1061,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 6. MessageHandler displays appropriate messages for changed and unchanged reminders
 
 **Snoozing a Reminder:**
-1. User provides reminder index and duration (e.g., "remind snooze 1 -t 30m")
+1. User provides reminder index and duration (e.g., "rem snooze 1 30m")
 2. Parser creates `REMINDER_SNOOZE` command with index and duration
 3. CommandHandler validates index with IndexValidator
 4. CommandHandler calls `ReminderList.handleSnooze(index, duration)`
@@ -1076,7 +1076,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 8. MessageHandler displays confirmation or error message
 
 **Deleting Reminders:**
-1. User provides reminder indexes (e.g., "remind rm 1,2,5")
+1. User provides reminder indexes (e.g., "rem rm 1,2,5")
 2. Parser creates `REMINDER_DELETE` command with index set
 3. CommandHandler validates indexes with IndexValidator
 4. CommandHandler calls `ReminderList.delete(indexes)`
@@ -1570,27 +1570,27 @@ The UI component provides a strict separation between application logic and outp
     - **Purpose:** Confirm a one-time reminder was added.
     - **Example output:**
       ```
-      Got it. One-time reminder added:
+      Got it. I've added this One-Time reminder:
       [RO][O] Doctor Appointment 2025-11-01 09:00
-      Now you have 2 reminders in the list.
+      Now you have 2 reminders in the reminder list.
       ```
 
 - **sendAddReminderRecMessage(Reminder, int)**
     - **Purpose:** Confirm a recurring reminder was added.
     - **Example output:**
       ```
-      Got it. Recurring reminder added:
+      Got it. I've added this recurring reminder:
       [RR][O] Pay bills (1w) Next: 2025-11-03 08:00
-      Now you have 3 reminders in the list.
+      Now you have 3 reminders in the reminder list.
       ```
 
 - **sendDeleteReminderMessage(List<Reminder>, int)**
     - **Purpose:** Confirm reminders were deleted.
     - **Example output:**
       ```
-      Removed the following reminders:
-      1. [RO][O] Doctor Appointment 2025-11-01 09:00
-      Now you have 1 reminder in the list.
+      Got it. I've deleted these reminders:
+      [RO][O] Doctor Appointment 2025-11-01 09:00
+      Now you have 1 reminder in the Reminders list.
       ```
 
 ---
@@ -1661,16 +1661,16 @@ The UI component provides a strict separation between application logic and outp
       ```
       Got it. I've added this habit:
       [H] Exercise (deadline: 2025-11-02 09:00, streak: 1)
-      Now you have 2 habits in the list.
+      Now you have X habits in the habit list.
       ```
 
 - **sendDeleteHabitMessage(Habit, int)**
     - **Purpose:** Confirm a habit was deleted.
     - **Example output:**
       ```
-      Noted! I've removed this habit:
+      Got it. I've deleted this habit:
       [H] Meditate (deadline: 2025-11-01 20:00, streak: 4)
-      Now you have 1 habit in the list.
+      Now you have X habit in the habit list.
       ```
 
 - **sendIncStreakMessage(Habit, StreakResult)**
