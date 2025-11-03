@@ -87,9 +87,9 @@ Adds a simple task to your task list without any specific deadline or time frame
 
 **Expected output:**
 ```
-Got it! I've added this task:
+Got it. I've added this task:
   [T][ ] Read chapter 5 of textbook
-Now you have X tasks in the list.
+Now you have 1 task in the task list.
 ```
 
 **Notes:**
@@ -119,9 +119,9 @@ Adds a task with a specific deadline date and time to your task list.
 
 **Expected output:**
 ```
-Got it! I've added this task:
+Got it. I've added this task:
   [D][ ] Submit assignment (by: 2025-11-15 23:59)
-Now you have X tasks in the list.
+Now you have 1 task in the task list.
 ```
 
 **Notes:**
@@ -152,9 +152,9 @@ Adds an event with a start date/time and end date/time to your task list.
 
 **Expected output:**
 ```
-Got it! I've added this task:
+Got it. I've added this task:
   [E][ ] Project week (from: 2025-11-01 09:00, to: 2025-11-07 17:00)
-Now you have X tasks in the list.
+Now you have 1 task in the task list.
 ```
 
 **Notes:**
@@ -364,9 +364,9 @@ Creates a reminder that fires once at a specified date and time.
 
 **Expected output:**
 ```
-Got it! I've added this One-Time reminder:
+Got it. I've added this One-Time reminder:
 [RO][O] Submit project report (2025-11-15 09:00)
-Now you have X reminders in the reminder list.
+Now you have 1 reminder in the reminder list.
 ```
 
 **Notes:**
@@ -398,7 +398,7 @@ Creates a reminder that repeats at regular intervals.
 
 **Expected output:**
 ```
-Got it! I've added this recurring reminder:
+Got it. I've added this recurring reminder:
 [RR][O] Take medicine (interval: 12H)
 Next reminder: 2025-10-31 08:00
 Now you have X reminders in the reminder list.
@@ -746,9 +746,9 @@ Creates a new habit with a specified time interval between completions.
 
 **Expected output:**
 ```
-Got it! I've added this habit:
+Got it. I've added this habit:
   [H] Exercise (deadline: 2025-10-27 14:30, streak: 1)
-Now you have X habits in the list.
+Now you have 1 habit in the habit list.
 ```
 
 **Notes:**
@@ -843,9 +843,9 @@ Removes a habit from your tracking list.
 
 **Expected output:**
 ```
-Noted! I've removed this habit:
+Got it. I've deleted this habit:
   [H] Meditation (deadline: 2025-10-26 20:00, streak: 3)
-Now you have X habits in the list.
+Now you have 1 habit in the habit list.
 ```
 
 **Notes:**
