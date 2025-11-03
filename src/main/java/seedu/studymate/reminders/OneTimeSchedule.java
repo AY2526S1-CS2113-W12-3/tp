@@ -58,13 +58,19 @@ public final class OneTimeSchedule implements Schedule {
      * @return true if reminder should fire now, false otherwise
      */
     public boolean isDue() {
-        if (isFired || !onReminder) {
+        if (isFired) {
             return false;
         }
 
         LocalDateTime now = LocalDateTime.now(clock);
         LocalDateTime target = LocalDateTime.of(remindAt.getDate(), remindAt.getTime());
-        return !now.isBefore(target);
+        if (!now.isBefore(target)) {
+            // mark as fired so reminder never sends again even if it turns on
+            isFired = true;
+            // CommandHandler only notifies if true is sent, which is when reminder is on
+            return onReminder;
+        }
+        return false;
     }
 
     /**

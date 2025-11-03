@@ -105,7 +105,14 @@ NUS students who rely on laptops to manage lectures, labs, CCAs, and project dea
     - Validated complete user workflows from command input to output across application restarts
 
 #### Review/mentoring contributions
-Reviewed and provided feedback for 17 pull requests:
+Reviewed and provided feedback for 24 pull requests:
+* [#159](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/159)
+* [#86](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/86)
+* [#71](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/71)
+* [#70](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/70)
+* [#69](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/69)
+* [#67](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/67)
+* [#65](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/65)
 * [#51](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/51)
 * [#49](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/49)
 * [#44](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/44)
