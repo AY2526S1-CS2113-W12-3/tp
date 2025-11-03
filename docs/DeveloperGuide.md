@@ -1016,7 +1016,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 
 **Adding a One-Time Reminder:**
 1. User provides reminder name and datetime (e.g., "rem Study for exam @ 2024-12-25 14:00")
-2. Parser creates `REMINDER_ADD` command with name and datetime
+2. Parser creates `REM_ADD_ONETIME` command with name and datetime
 3. CommandHandler calls `ReminderList.addReminderOneTime(name, dateTime)`
 4. ReminderList creates new Reminder with:
     - OneTimeSchedule containing the target datetime
@@ -1028,7 +1028,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 
 **Adding a Recurring Reminder:**
 1. User provides reminder name, datetime, and interval (e.g., "rem Take medicine @ 2025-01-01 09:00 -r 12h")
-2. Parser creates `REMINDER_ADD` command with name, datetime, and interval
+2. Parser creates `REM_ADD_REC` command with name, datetime, and interval
 3. CommandHandler calls `ReminderList.addReminderRec(name, dateTime, interval)`
 4. ReminderList creates new Reminder with:
     - RecurringSchedule containing target datetime and interval
@@ -1039,7 +1039,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 
 **Listing Reminders:**
 1. User types "rem ls"
-2. Parser creates `REMINDER_LIST` command
+2. Parser creates `REM_LS` command
 3. CommandHandler calls `MessageHandler.sendReminderList(reminderList)`
 4. MessageHandler iterates through all reminders and displays:
     - Index number (1-based)
@@ -1050,7 +1050,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 
 **Turning On/Off Reminders:**
 1. User provides reminder indexes (e.g., "rem on 1,3" or "rem off 2")
-2. Parser creates `REMINDER_ON` or `REMINDER_OFF` command with index set
+2. Parser creates `REM_ON` or `REM_OFF` command with index set
 3. CommandHandler validates indexes with IndexValidator
 4. CommandHandler calls `ReminderList.turnOnReminders(indexes)` or `turnOffReminders(indexes)`
 5. ReminderList iterates through each index:
@@ -1062,7 +1062,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 
 **Snoozing a Reminder:**
 1. User provides reminder index and duration (e.g., "rem snooze 1 30m")
-2. Parser creates `REMINDER_SNOOZE` command with index and duration
+2. Parser creates `REM_SNOOZE` command with index and duration
 3. CommandHandler validates index with IndexValidator
 4. CommandHandler calls `ReminderList.handleSnooze(index, duration)`
 5. ReminderList retrieves the reminder and checks if it's recurring
@@ -1077,7 +1077,7 @@ The sequence diagram below illustrates the interactions within the Reminders com
 
 **Deleting Reminders:**
 1. User provides reminder indexes (e.g., "rem rm 1,2,5")
-2. Parser creates `REMINDER_DELETE` command with index set
+2. Parser creates `REM_RM` command with index set
 3. CommandHandler validates indexes with IndexValidator
 4. CommandHandler calls `ReminderList.delete(indexes)`
 5. ReminderList sorts indexes in reverse order (to prevent index shifting issues)
