@@ -36,7 +36,8 @@
       - [Listing Habits: `habit ls`](#listing-habits-habit-ls)
       - [Incrementing Habit Streak: `habit streak INDEX`](#incrementing-habit-streak-habit-streak-index)
       - [Deleting a Habit: `habit rm INDEX`](#deleting-a-habit-habit-rm-index)
-   5. [Exiting the Application: `bye`](#exiting-the-application-bye)
+   5. [Getting Help: `help`](#getting-help-help)
+   6. [Exiting the Application: `bye`](#exiting-the-application-bye)
 4. [FAQ](#faq)
 5. [Command Summary](#command-summary)
 
@@ -354,7 +355,7 @@ Creates a reminder that fires once at a specified date and time.
 * The `@` delimiter is required to separate the message from the date/time.
 * **Important:** A space is required after the `@` symbol. Use `@ 2025-11-15 09:00` not `@2025-11-15 09:00`.
 * The date and time must be in `YYYY-MM-DD HH:mm` format.
-* The reminder must be set for a future date/time.
+* The reminder must be set for a future date/time with at least 1 minute difference.
 
 **Examples:**
 * `rem Submit project report @ 2025-11-15 09:00`
@@ -853,6 +854,35 @@ Now you have X habits in the list.
 
 ---
 
+### Getting Help: `help`
+
+Displays a quick reference of all available commands with their formats.
+
+**Format:** `help`
+
+**Expected Output:**
+```
+StudyMate - Command Summary
+
+TASK MANAGEMENT:
+  todo DESCRIPTION
+    - Add a simple task
+  deadline DESCRIPTION /by YYYY-MM-DD HH:mm
+    - Add a task with a deadline
+  ...
+  (Full command list displayed)
+
+Note: When specifying multiple indices, do not include spaces.
+Example: mark 1,2,3 not mark 1, 2, 3
+```
+
+**Notes:**
+* Shows all commands organized by category (Tasks, Reminders, Timer, Habits, Other)
+* Useful for quick reference without leaving the application
+* The output matches the Command Summary section of this guide
+
+---
+
 ### Exiting the Application: `bye`
 
 Safely closes StudyMate, saving all your data automatically before shutdown.
@@ -969,4 +999,5 @@ Note that this does not affect readability even looking at the text file.
 * Delete habit: `habit rm INDEX`
 
 **Other:**
+* Show help: `help`
 * Exit application: `bye`
