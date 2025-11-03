@@ -46,8 +46,6 @@ activate TaskList
 TaskList --> TaskList
 deactivate TaskList
 
-TaskList -> TaskList : assert(taskList.contains(newTask))
-activate TaskList
 TaskList --> TaskList
 deactivate TaskList
 
