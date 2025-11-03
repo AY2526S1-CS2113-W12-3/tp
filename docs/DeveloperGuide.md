@@ -1558,8 +1558,8 @@ The UI component provides a strict separation between application logic and outp
     - **Purpose:** List reminders currently set in the system.
     - **Example output:**
       ```
-      1. [ROO] Doctor Appointment 2025-11-01 09:00
-      2. [RROO] Pay bills (1w) Next: 2025-11-03 08:00
+      1. [RO][O] Doctor Appointment 2025-11-01 09:00
+      2. [RR][O] Pay bills (1w) Next: 2025-11-03 08:00
       ```
       If the list is empty:
       ```
@@ -1571,7 +1571,7 @@ The UI component provides a strict separation between application logic and outp
     - **Example output:**
       ```
       Got it. One-time reminder added:
-      [ROO] Doctor Appointment 2025-11-01 09:00
+      [RO][O] Doctor Appointment 2025-11-01 09:00
       Now you have 2 reminders in the list.
       ```
 
@@ -1580,7 +1580,7 @@ The UI component provides a strict separation between application logic and outp
     - **Example output:**
       ```
       Got it. Recurring reminder added:
-      [RROO] Pay bills (1w) Next: 2025-11-03 08:00
+      [RR][O] Pay bills (1w) Next: 2025-11-03 08:00
       Now you have 3 reminders in the list.
       ```
 
@@ -1589,7 +1589,7 @@ The UI component provides a strict separation between application logic and outp
     - **Example output:**
       ```
       Removed the following reminders:
-      1. [ROO] Doctor Appointment 2025-11-01 09:00
+      1. [RO][O] Doctor Appointment 2025-11-01 09:00
       Now you have 1 reminder in the list.
       ```
 
@@ -1719,8 +1719,8 @@ The UI component provides a strict separation between application logic and outp
 | ToDo      | `[T][ ] Read notes`                           | toDoString            |
 | Deadline  | `[D][X] Submit HW (by: 2025-10-28)`           | deadlineString        |
 | Event     | `[E][ ] Meeting (from..., to:...)`            | eventString           |
-| Reminder  | `[ROO] Call mom 2025-11-01 09:00`             | oneTimeReminderString |
-| Recurring | `[RROO] Study interval 1d Next reminder: ...` | recReminderString     |
+| Reminder  | `[RO][O] Call mom (2025-11-01 09:00)`         | oneTimeReminderString |
+| Recurring | `[RR][O] Study (interval: 1d)`                | recReminderString     |
 | Habit     | `[H] Hydrate (deadline: ..., streak: 3)`      | habitString           |
 | Timer     | `TIMER RUNNING 23:30 left - Math HW`          | MessageHandler        |
 
@@ -1858,7 +1858,7 @@ This section provides instructions for manual testing of StudyMate. These test c
 
 **Test case: List sorted tasks**
 - Command: `list -s`
-- Expected: Tasks are displayed sorted by date (deadlines and events sorted chronologically, todos at the end).
+- Expected: Only deadlines and events are displayed, sorted chronologically by date (earliest first). Todos are not included in the sorted view.
 
 ### Marking Tasks
 
