@@ -149,6 +149,7 @@ NUS students who rely on laptops to manage lectures, labs, CCAs, and project dea
 - [#51](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/51)
 - [#65](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/65)
 - [#70](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/70)
+- [#71](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/71)
 
 ---
 
@@ -174,3 +175,7 @@ NUS students who rely on laptops to manage lectures, labs, CCAs, and project dea
 - [#62](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/62)
 - [#63](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/63)
 - [#68](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/68)
+- [#83](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/83)
+- [#84](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/84)
+- [#164](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/164)
+- [#165](https://github.com/AY2526S1-CS2113-W12-3/tp/pull/165)
