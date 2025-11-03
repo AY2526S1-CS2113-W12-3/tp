@@ -549,7 +549,7 @@ public class TaskListTest {
     void testEditFromDateOfEvent() throws StudyMateException {
         LocalDateTime originalFrom = LocalDateTime.of(2025, 11, 1, 9, 0);
         LocalDateTime originalTo = LocalDateTime.of(2025, 11, 3, 17, 0);
-        LocalDateTime newFrom = LocalDateTime.of(2025, 11, 5, 10, 0);
+        LocalDateTime newFrom = LocalDateTime.of(2025, 11, 1, 10, 0);
         taskList.addEvent("conference", new DateTimeArg(originalFrom.toLocalDate(), originalFrom.toLocalTime()),
                           new DateTimeArg(originalTo.toLocalDate(), originalTo.toLocalTime()));
 
@@ -650,7 +650,7 @@ public class TaskListTest {
         LocalDateTime newDeadline = LocalDateTime.of(2025, 12, 1, 10, 0);
         taskList.editDeadline(1, new DateTimeArg(newDeadline.toLocalDate(), newDeadline.toLocalTime()));
         taskList.editDesc(2, "updated task 3");
-        LocalDateTime newFrom = LocalDateTime.of(2025, 11, 25, 8, 30);
+        LocalDateTime newFrom = LocalDateTime.of(2025, 11, 21, 8, 30);
         taskList.editFrom(2, new DateTimeArg(newFrom.toLocalDate(), newFrom.toLocalTime()));
 
         // Verify changes
